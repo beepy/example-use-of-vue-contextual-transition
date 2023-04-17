@@ -2,8 +2,8 @@
 import { useRoute } from "vue-router";
 import { authors } from "../data/blog";
 
-const route = useRoute();
-const slug = route.params.slug
+const route = useRoute(); 
+const slug = route.params.slug;
 const authorIndex = authors.findIndex((p) => p.slug === slug)
 const author = authors[authorIndex]
 const previousAuthor = authorIndex > 0 ? authors[authorIndex - 1] : undefined
