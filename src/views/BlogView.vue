@@ -16,7 +16,7 @@ const posts = computed(() => {
 <template>
   <div>
     <ul class="max-w-xl mx-auto mt-6 px-4 md:px-0">
-      <li v-for="post in posts" class="flex items-center mb-4 shadow-xl rounded border">
+      <li v-for="post in posts" class="flex items-stretch mb-4 shadow-xl rounded border" :key="post.id">
         <RouterLink :to="`/blog/${post.slug}`" class="flex-shrink">
           <img
             :src="post.thumbnailUrl"
@@ -29,7 +29,7 @@ const posts = computed(() => {
           />
         </RouterLink>
         <RouterLink :to="`/blog/${post.slug}`"
-                    class="text-lg md:text-xl font-bold flex-grow px-6 text-gray-600 leading-5"
+          class="text-lg md:text-xl font-bold flex-grow px-6 text-gray-600 leading-5 flex items-center"
         >
 
           <h3
@@ -44,7 +44,7 @@ const posts = computed(() => {
         <RouterLink
           v-if="post.author"
           :to="`/authors/${post.author.slug}`"
-          class="flex-col basis-40 items-center hidden md:flex"
+          class="flex-col basis-40 items-center hidden md:flex justify-center"
         >
           <img
             :src="post.author.img"

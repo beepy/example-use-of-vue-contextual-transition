@@ -15,7 +15,7 @@ const menuItems: menuItem[] = [
   <main class="home">
     <p>Examples</p>
     <ul>
-      <li v-for="item in menuItems">
+      <li v-for="item in menuItems" :key="item.to">
         <RouterLink
           :to="item.to"
           v-shared-element-transition="{
