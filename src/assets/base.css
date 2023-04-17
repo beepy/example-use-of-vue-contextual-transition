@@ -1,0 +1,9 @@
+/*.shared-element-transition-enter-active > *,
+.shared-element-transition-leave-active > * {
+  opacity: 0.0;
+}*/
+
+
+.text-content ul, .text-content ol, .text-content p, .text-content blockquote {
+    margin-bottom: 1em;
+}

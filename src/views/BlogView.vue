@@ -1,0 +1,70 @@
+<script setup lang="ts">
+import { computed } from "vue";
+import { posts as rawPosts, authors } from "../data/blog"
+
+const posts = computed(() => {
+  return rawPosts.map((p) => {
+    const a = authors.find((a) => a.slug === p.authorSlug)
+    return {
+      ...p,
+      author: a
+    }
+  })
+})
+</script>
+
+<template>
+  <div>
+    <ul class="max-w-xl mx-auto mt-6 px-4 md:px-0">
+      <li v-for="post in posts" class="flex items-center mb-4 shadow-xl rounded border">
+        <RouterLink :to="`/blog/${post.slug}`" class="flex-shrink">
+          <img
+            :src="post.thumbnailUrl"
+            class="w-24"
+            v-shared-element-transition="{
+              role: 'img',
+              id: post.slug
+            }"
+            style="aspect-ratio: 1 / 1"
+          />
+        </RouterLink>
+        <RouterLink :to="`/blog/${post.slug}`"
+                    class="text-lg md:text-xl font-bold flex-grow px-6 text-gray-600 leading-5"
+        >
+
+          <h3
+            v-shared-element-transition="{
+              role: 'title',
+              id: post.slug
+            }">
+              {{ post.title }}
+            </h3>
+        </RouterLink>
+
+        <RouterLink
+          v-if="post.author"
+          :to="`/authors/${post.author.slug}`"
+          class="flex-col basis-40 items-center hidden md:flex"
+        >
+          <img
+            :src="post.author.img"
+            class="w-12 rounded-full"
+            v-shared-element-transition="{
+              role: 'img',
+              id: post.author.slug + '-author',
+              only: 'out'
+            }"
+            style="aspect-ratio: 1 / 1"
+          />
+          <span class="text-sm"
+            v-shared-element-transition="{
+              role: 'title',
+              id: post.author.slug + '-author',
+              only: 'out'
+          }">{{ post.author.title }}</span>
+        </RouterLink>
+
+      </li>
+    </ul>
+  </div>
+</template>
