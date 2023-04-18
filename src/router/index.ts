@@ -1,15 +1,15 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 // import { useContextualTransition } from 'vue-contextual-transition'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/HomeView.vue';
 // import BlogView from '../views/BlogView.vue'
 // import PostView from '../views/PostView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(_to, _from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else {
-      return { top: 0 }
+      return { top: 0 };
     }
   },
   routes: [
@@ -42,6 +42,6 @@ const router = createRouter({
       component: () => import('../views/AuthorView.vue')
     }
   ]
-})
+});
 
-export default router
+export default router;
