@@ -1,13 +1,13 @@
 <script setup lang="ts">
 type menuItem = {
-  text: string;
-  to: string;
-  id: string;
-};
+  text: string
+  to: string
+  id: string
+}
 
 const menuItems: menuItem[] = [
-  { text: "About", to: "/about", id: "about" },
-  { text: "Blog", to: "/blog", id: "blog" },
+  { text: 'About', to: '/about', id: 'about' },
+  { text: 'Blog', to: '/blog', id: 'blog' }
 ]
 </script>
 
@@ -17,13 +17,16 @@ const menuItems: menuItem[] = [
     <ul>
       <li v-for="item in menuItems" :key="item.to">
         <RouterLink
-          :to="item.to"
           v-shared-element="{
-            role: 'title', id: item.id
-          }">{{ item.text }}</RouterLink>
+            role: 'title',
+            id: item.id
+          }"
+          :to="item.to"
+          >{{ item.text }}</RouterLink
+        >
       </li>
     </ul>
-<!-- 
+    <!-- 
     <RouterLink
       style=""
       to="/about"
