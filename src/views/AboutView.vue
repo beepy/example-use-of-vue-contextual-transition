@@ -4,7 +4,8 @@
       v-shared-element="{
         role: 'title',
         id: 'about',
-        scale: 'free'
+        scale: 'free',
+        type: 'page'
       }"
       class="max-w-screen-sm p-6"
     >

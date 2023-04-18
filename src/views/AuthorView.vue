@@ -23,7 +23,8 @@ const nextAuthor =
           <img
             v-shared-element="{
               role: 'img',
-              id: author.slug + '-author'
+              id: author.slug,
+              type: 'author'
             }"
             :src="author.img"
             class="inline-block rounded-full w-96"
@@ -34,7 +35,8 @@ const nextAuthor =
           <h2
             v-shared-element="{
               role: 'title',
-              id: author.slug + '-author'
+              id: author.slug,
+              type: 'author'
             }"
             class="text-lg md:text-xl font-bold"
           >

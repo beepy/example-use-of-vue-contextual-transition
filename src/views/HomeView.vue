@@ -19,7 +19,8 @@ const menuItems: menuItem[] = [
         <RouterLink
           v-shared-element="{
             role: 'title',
-            id: item.id
+            id: item.id,
+            type: 'page'
           }"
           :to="item.to"
           >{{ item.text }}</RouterLink

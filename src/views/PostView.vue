@@ -26,7 +26,8 @@ if (post) {
         <img
           v-shared-element="{
             role: 'img',
-            id: post.slug
+            id: post.slug,
+            type: 'post'
           }"
           :src="post.headerUrl"
           style="aspect-ratio: 1280 / 720"
@@ -35,7 +36,8 @@ if (post) {
           <h2
             v-shared-element="{
               role: 'title',
-              id: post.slug
+              id: post.slug,
+              type: 'post'
             }"
             class="text-lg md:text-xl font-bold mt-6"
           >
@@ -52,7 +54,8 @@ if (post) {
             <img
               v-shared-element="{
                 role: 'img',
-                id: post.author.slug + '-author'
+                id: post.author.slug,
+                type: 'author'
               }"
               :src="post.author.img"
               class="w-12 rounded-full"
@@ -61,7 +64,8 @@ if (post) {
             <span
               v-shared-element="{
                 role: 'title',
-                id: post.author.slug + '-author'
+                id: post.author.slug,
+                type: 'author'
               }"
               class="text-sm"
               >{{ post.author.title }}</span

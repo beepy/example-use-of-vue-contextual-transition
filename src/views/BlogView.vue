@@ -18,14 +18,15 @@ const posts = computed(() => {
     <ul class="max-w-xl mx-auto mt-6 px-4 md:px-0">
       <li
         v-for="post in posts"
-        :key="post.id"
+        :key="post.slug"
         class="flex items-stretch mb-4 shadow-xl rounded border"
       >
         <RouterLink :to="`/blog/${post.slug}`" class="flex-shrink">
           <img
             v-shared-element="{
               role: 'img',
-              id: post.slug
+              id: post.slug,
+              type: 'post'
             }"
             :src="post.thumbnailUrl"
             class="w-24"
@@ -39,7 +40,8 @@ const posts = computed(() => {
           <h3
             v-shared-element="{
               role: 'title',
-              id: post.slug
+              id: post.slug,
+              type: 'post'
             }"
           >
             {{ post.title }}
@@ -55,7 +57,8 @@ const posts = computed(() => {
             v-shared-element="{
               role: 'img',
               id: post.author.slug + '-author',
-              only: 'leave'
+              only: 'leave',
+              type: 'author'
             }"
             :src="post.author.img"
             class="w-12 rounded-full"
@@ -65,7 +68,8 @@ const posts = computed(() => {
             v-shared-element="{
               role: 'title',
               id: post.author.slug + '-author',
-              only: 'leave'
+              only: 'leave',
+              type: 'author'
             }"
             class="text-sm"
             >{{ post.author.title }}</span
