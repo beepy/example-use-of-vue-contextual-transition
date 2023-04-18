@@ -3,7 +3,9 @@
   opacity: 0.0;
 }*/
 
-
-.text-content ul, .text-content ol, .text-content p, .text-content blockquote {
-    margin-bottom: 1em;
+.text-content ul,
+.text-content ol,
+.text-content p,
+.text-content blockquote {
+  margin-bottom: 1em;
 }

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 type menuItem = {
-  text: string
-  to: string
-  id: string
-}
+  text: string;
+  to: string;
+  id: string;
+};
 
 const menuItems: menuItem[] = [
   { text: 'About', to: '/about', id: 'about' },
   { text: 'Blog', to: '/blog', id: 'blog' }
-]
+];
 </script>
 
 <template>

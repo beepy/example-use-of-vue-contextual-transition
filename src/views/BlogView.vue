@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { posts as rawPosts, authors } from '../data/blog'
+import { computed } from 'vue';
+import { posts as rawPosts, authors } from '../data/blog';
 
 const posts = computed(() => {
   return rawPosts.map((p) => {
-    const a = authors.find((a) => a.slug === p.authorSlug)
+    const a = authors.find((a) => a.slug === p.authorSlug);
     return {
       ...p,
       author: a
-    }
-  })
-})
+    };
+  });
+});
 </script>
 
 <template>

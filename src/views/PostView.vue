@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-import { posts, authors } from '../data/blog'
+import { useRoute } from 'vue-router';
+import { posts, authors } from '../data/blog';
 
-const route = useRoute()
-const slug = route.params.slug
-const postIndex = posts.findIndex((p) => p.slug === slug)
-const post = posts[postIndex]
-const previousPost = postIndex > 0 ? posts[postIndex - 1] : undefined
-const nextPost = postIndex < posts.length - 1 ? posts[postIndex + 1] : undefined
+const route = useRoute();
+const slug = route.params.slug;
+const postIndex = posts.findIndex((p) => p.slug === slug);
+const post = posts[postIndex];
+const previousPost = postIndex > 0 ? posts[postIndex - 1] : undefined;
+const nextPost =
+  postIndex < posts.length - 1 ? posts[postIndex + 1] : undefined;
 
 if (post) {
-  post.author = authors.find((a) => a.slug === post.authorSlug)
+  post.author = authors.find((a) => a.slug === post.authorSlug);
 }
 </script>
 <template>
@@ -67,10 +68,18 @@ if (post) {
             >
           </RouterLink>
           <div class="flex my-6">
-            <RouterLink v-if="previousPost" :to="`/blog/${previousPost.slug}`" class="flex-grow">
+            <RouterLink
+              v-if="previousPost"
+              :to="`/blog/${previousPost.slug}`"
+              class="flex-grow"
+            >
               &#60; {{ previousPost.title }}
             </RouterLink>
-            <RouterLink v-if="nextPost" :to="`/blog/${nextPost.slug}`" class="text-right flex-grow">
+            <RouterLink
+              v-if="nextPost"
+              :to="`/blog/${nextPost.slug}`"
+              class="text-right flex-grow"
+            >
               {{ nextPost.title }} &#62;
             </RouterLink>
           </div>

@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-import { authors } from '../data/blog'
+import { useRoute } from 'vue-router';
+import { authors } from '../data/blog';
 
-const route = useRoute()
-const slug = route.params.slug
-const authorIndex = authors.findIndex((p) => p.slug === slug)
-const author = authors[authorIndex]
-const previousAuthor = authorIndex > 0 ? authors[authorIndex - 1] : undefined
-const nextAuthor = authorIndex < authors.length - 1 ? authors[authorIndex + 1] : undefined
+const route = useRoute();
+const slug = route.params.slug;
+const authorIndex = authors.findIndex((p) => p.slug === slug);
+const author = authors[authorIndex];
+const previousAuthor = authorIndex > 0 ? authors[authorIndex - 1] : undefined;
+const nextAuthor =
+  authorIndex < authors.length - 1 ? authors[authorIndex + 1] : undefined;
 </script>
 <template>
   <div
