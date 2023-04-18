@@ -18,7 +18,7 @@ const menuItems: menuItem[] = [
       <li v-for="item in menuItems" :key="item.to">
         <RouterLink
           :to="item.to"
-          v-shared-element-transition="{
+          v-shared-element="{
             role: 'title', id: item.id
           }">{{ item.text }}</RouterLink>
       </li>
@@ -27,7 +27,7 @@ const menuItems: menuItem[] = [
     <RouterLink
       style=""
       to="/about"
-      v-shared-element-transition="{
+      v-shared-element="{
         role: 'title', id: 'about', scale: 'free'
       }">About<div style="" /></RouterLink>
       <img src="/sample-01-carrots-pexels-pixabay-54082-thumbnail.jpg" />
@@ -36,8 +36,8 @@ const menuItems: menuItem[] = [
 </template>
 
 <style>
-/*  .shared-element-transition-enter-active > *,
-.shared-element-transition-leave-active > * {
+/*  .contextual-transition-enter-active > *,
+.contextual-transition-leave-active > * {
   opacity: 0.0;
 }
 */
@@ -50,26 +50,26 @@ main.home a div {
   display: none;
 }
 
-main.home.shared-element-transition-leave-active a div, main.home.shared-element-transition-enter-active a div {
+main.home.contextual-transition-leave-active a div, main.home.contextual-transition-enter-active a div {
   display: block;
   position: absolute; left: 0; top: 0; width: 100%; height: 100%;
   background-color: yellow;
   
 }
 
-main.home.shared-element-transition-leave-active a div {
+main.home.contextual-transition-leave-active a div {
   transition: opacity 50ms;
 }
 
-main.home.shared-element-transition-enter-active a div {
+main.home.contextual-transition-enter-active a div {
   transition: opacity 50ms 200ms;
 }
 
-main.home.shared-element-transition-leave-from a div, main.home.shared-element-transition-enter-to a div {
+main.home.contextual-transition-leave-from a div, main.home.contextual-transition-enter-to a div {
   opacity: 0;
 }
 
-main.home.shared-element-transition-leave-to a div, main.home.shared-element-transition-enter-from a div {
+main.home.contextual-transition-leave-to a div, main.home.contextual-transition-enter-from a div {
   opacity: 1;
 }
 */

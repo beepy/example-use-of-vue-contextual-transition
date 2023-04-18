@@ -12,17 +12,17 @@ const nextAuthor = authorIndex < (authors.length - 1) ? authors[authorIndex + 1]
 </script>
 <template>
 <div v-relative-slide="{
-    group: 'authors',
+    type: 'authors',
     value: authorIndex
   }">
   <div class="max-w-2xl mx-auto mt-12">
     <div v-if="author" class="md:flex gap-4 px-6 md:px-0">
       <div class="flex-grow text-center">
-        <img :src="author.img" v-shared-element-transition="{
+        <img :src="author.img" v-shared-element="{
           role: 'img', id: author.slug + '-author' }" class="inline-block rounded-full w-96" style="aspect-ratio: 1 / 1" />
       </div>
       <div class="flex-grow">
-        <h2 class="text-lg md:text-xl font-bold" v-shared-element-transition="{
+        <h2 class="text-lg md:text-xl font-bold" v-shared-element="{
           role: 'title', id: author.slug + '-author' }">{{ author.title }}</h2>
         <div v-html="author.content" class="text-content" />
         <div class="flex">

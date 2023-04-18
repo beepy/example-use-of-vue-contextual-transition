@@ -1,4 +1,4 @@
-# Example Use of Vue Shared Element Transition
+# Example Use of Vue Contextual Transition
 
 This template should help get you started developing with Vue 3 in Vite.
 

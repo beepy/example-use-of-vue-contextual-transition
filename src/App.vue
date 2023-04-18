@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
-// import { SharedElementTransition } from 'vue-shared-element-transition';
+// import { ContextualTransition } from 'vue-contextual-transition';
+
+const duration = ref(250);
 
 </script>
 
@@ -22,13 +25,14 @@ import { RouterLink, RouterView } from 'vue-router'
    <li class="mr-6">
      <RouterLink class="text-blue-500 hover:text-blue-800" to="/blog">Blog</RouterLink>
    </li>
+   <li><button @click="duration = duration + 250">Test {{ duration }}</button></li>
  </ul>
   </header>
   
   <RouterView v-slot="{ Component, route }">
-    <SharedElementTransition :speed="250">
+    <ContextualTransition :duration="duration">
       <component :is="Component" :key="route.path" />
-    </SharedElementTransition>
+    </ContextualTransition>
   </RouterView>
   
 <!-- 

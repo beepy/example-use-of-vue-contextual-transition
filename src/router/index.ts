@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import { useSharedElementTransition } from 'vue-shared-element-transition'
+// import { useContextualTransition } from 'vue-contextual-transition'
 import HomeView from '../views/HomeView.vue'
 // import BlogView from '../views/BlogView.vue'
 // import PostView from '../views/PostView.vue'
@@ -17,7 +17,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      // meta: { transition: useSharedElementTransition({ speed: 4000 }) }
+      // meta: { transition: useContextualTransition({ speed: 4000 }) }
     },
     {
       path: '/about',
@@ -26,7 +26,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
-      // meta: { transition: useSharedElementTransition({ speed: 4000 }) }
+      // meta: { transition: useContextualTransition({ speed: 4000 }) }
     },
     {
       path: '/blog',

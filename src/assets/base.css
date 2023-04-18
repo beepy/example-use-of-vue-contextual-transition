@@ -1,5 +1,5 @@
-/*.shared-element-transition-enter-active > *,
-.shared-element-transition-leave-active > * {
+/*.contextual-transition-enter-active > *,
+.contextual-transition-leave-active > * {
   opacity: 0.0;
 }*/
 

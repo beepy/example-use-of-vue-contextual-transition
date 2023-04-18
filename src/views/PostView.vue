@@ -15,15 +15,15 @@ if (post) {
 </script>
 <template>
 <div v-relative-slide="{
-    group: 'posts',
+    type: 'posts',
     value: postIndex
   }">
   <div class="max-w-xl mx-auto mt-6">
     <template v-if="post">
-      <img :src="post.headerUrl" v-shared-element-transition="{
+      <img :src="post.headerUrl" v-shared-element="{
         role: 'img', id: post.slug }" style="aspect-ratio: 1280 / 720;" />
       <div class="px-6 md:px-0">
-        <h2 class="text-lg md:text-xl font-bold mt-6" v-shared-element-transition="{
+        <h2 class="text-lg md:text-xl font-bold mt-6" v-shared-element="{
         role: 'title', id: post.slug }">{{ post.title }}</h2>
         <div v-html="post.content" class="text-content" />
         <div v-html="post.content" class="text-content" />
@@ -36,14 +36,14 @@ if (post) {
           <img
             :src="post.author.img"
             class="w-12 rounded-full"
-            v-shared-element-transition="{
+            v-shared-element="{
               role: 'img',
               id: post.author.slug + '-author'
             }"
             style="aspect-ratio: 1 / 1"
           />
           <span class="text-sm"
-            v-shared-element-transition="{
+            v-shared-element="{
               role: 'title',
               id: post.author.slug + '-author'
           }">{{ post.author.title }}</span>

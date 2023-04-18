@@ -2,7 +2,7 @@
   <div class="about">
     <div
       class="max-w-screen-sm p-6"
-      v-shared-element-transition="{
+      v-shared-element="{
           role: 'title', id: 'about', scale: 'free'
       }">
       <h1

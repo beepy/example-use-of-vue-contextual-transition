@@ -21,7 +21,7 @@ const posts = computed(() => {
           <img
             :src="post.thumbnailUrl"
             class="w-24"
-            v-shared-element-transition="{
+            v-shared-element="{
               role: 'img',
               id: post.slug
             }"
@@ -33,7 +33,7 @@ const posts = computed(() => {
         >
 
           <h3
-            v-shared-element-transition="{
+            v-shared-element="{
               role: 'title',
               id: post.slug
             }">
@@ -49,18 +49,18 @@ const posts = computed(() => {
           <img
             :src="post.author.img"
             class="w-12 rounded-full"
-            v-shared-element-transition="{
+            v-shared-element="{
               role: 'img',
               id: post.author.slug + '-author',
-              only: 'out'
+              only: 'leave'
             }"
             style="aspect-ratio: 1 / 1"
           />
           <span class="text-sm"
-            v-shared-element-transition="{
+            v-shared-element="{
               role: 'title',
               id: post.author.slug + '-author',
-              only: 'out'
+              only: 'leave'
           }">{{ post.author.title }}</span>
         </RouterLink>
 
