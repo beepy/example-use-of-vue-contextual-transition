@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "vue": "^3.2.47",
+    "vue-contextual-transition": "^0.1.0",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
