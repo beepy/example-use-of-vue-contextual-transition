@@ -40,6 +40,19 @@ const router = createRouter({
     {
       path: '/authors/:slug',
       component: () => import('../views/AuthorView.vue')
+    },
+    {
+      path: '/blog-suspense',
+      name: 'blogSuspense',
+      component: () => import('../views/BlogSuspenseView.vue')
+    },
+    {
+      path: '/blog-suspense/:slug',
+      component: () => import('../views/PostSuspenseView.vue')
+    },
+    {
+      path: '/authors-suspense/:slug',
+      component: () => import('../views/AuthorSuspenseView.vue')
     }
   ]
 });

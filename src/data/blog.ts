@@ -5,7 +5,7 @@ type Author = {
   img: string;
 };
 
-type Post = {
+export type Post = {
   slug: string;
   title: string;
   content: string;
@@ -156,7 +156,7 @@ export const posts: Post[] = [
     slug: 'post-10',
     title: 'Fusce Eget Mauris In Erat',
     content:
-      '<p>Do dolor ipsum occaecat incididunt deserunt dolor dolor non cillum velit. Ad eu amet minim est minim qui ipsum ullamco Lorem. Laborum velit elit et ex culpa Lorem proident.</p>\n<p>Consectetur quis amet non occaecat. Qui qui elit elit ad aliqua. Nostrud sunt adipisicing officia consectetur Lorem culpa fugiat aliquip consequat non laboris consequat. Excepteur eu occaecat cupidatat esse voluptate. Aliquip nostrud mollit tempor laboris ut esse non aliqua magna est quis.</p>',
+      '<p>Do dolor ipsum occaecat incididunt deserunt dolor dolor non cillum velit. Ad eu amet minim est minim qui ipsum ullamco Lorem. Laborum velit elit et ex culpa Lorem proident.</p>',
     color: 'green',
     authorSlug: 'amanda-brown',
     thumbnailUrl:

@@ -19,7 +19,7 @@ const nextAuthor =
   >
     <div class="max-w-2xl mx-auto mt-12">
       <div v-if="author" class="md:flex gap-4 px-6 md:px-0">
-        <div class="flex-grow text-center">
+        <div class="flex-grow text-center" style="flex-basis: 500px">
           <img
             v-shared-element="{
               role: 'img',
