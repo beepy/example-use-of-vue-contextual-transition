@@ -1,5 +1,5 @@
 {
-  "name": "examle-use-of-vue-contextual-transition",
+  "name": "example-use-of-vue-contextual-transition",
   "version": "0.1.0",
   "description": "Example use of Vue Contextual Transition.",
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
-    "build-github": "vite build --base=/examle-use-of-vue-contextual-transition/",
+    "build-github": "vite build --base=/example-use-of-vue-contextual-transition/",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint:fix": "eslint . --fix",
