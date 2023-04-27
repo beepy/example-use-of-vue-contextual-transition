@@ -53,10 +53,15 @@ const posts = computed(() => {
           :to="`/author/${post.author.slug}`"
           class="flex-col basis-40 items-center hidden md:flex justify-center"
         >
+          <!--
+            why only: 'leave'? When entering, we don't know which instance of
+            the author we should transition to
+          -->
+
           <img
             v-shared-element="{
               role: 'img',
-              id: post.author.slug + '-author',
+              id: post.author.slug,
               only: 'leave',
               type: 'author'
             }"
@@ -67,7 +72,7 @@ const posts = computed(() => {
           <span
             v-shared-element="{
               role: 'title',
-              id: post.author.slug + '-author',
+              id: post.author.slug,
               only: 'leave',
               type: 'author'
             }"
