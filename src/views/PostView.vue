@@ -48,7 +48,7 @@ if (post) {
           <div class="text-content" v-html="post.content" />
           <RouterLink
             v-if="post.author"
-            :to="`/authors/${post.author.slug}`"
+            :to="`/author/${post.author.slug}`"
             class="flex flex-col basis-40 items-center my-6"
           >
             <img
@@ -74,14 +74,14 @@ if (post) {
           <div class="flex my-6">
             <RouterLink
               v-if="previousPost"
-              :to="`/blog/${previousPost.slug}`"
+              :to="`/post/${previousPost.slug}`"
               class="flex-grow"
             >
               &#60; {{ previousPost.title }}
             </RouterLink>
             <RouterLink
               v-if="nextPost"
-              :to="`/blog/${nextPost.slug}`"
+              :to="`/post/${nextPost.slug}`"
               class="text-right flex-grow"
             >
               {{ nextPost.title }} &#62;

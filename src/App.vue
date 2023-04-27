@@ -7,15 +7,15 @@ const duration = ref(250);
 
 <template>
   <header class="max-w-screen-sm" style="margin: 0 auto">
-    <ul class="flex px-6">
-      <!-- <li class="mr-6">
+    <ul class="flex gap-6 justify-center">
+      <li class="mr-6">
         <RouterLink class="text-blue-500 hover:text-blue-800" to="/"
           >Home</RouterLink
         >
-      </li> -->
+      </li>
       <li class="mr-6">
-        <RouterLink class="text-blue-500 hover:text-blue-800" to="/blog"
-          >Blog</RouterLink
+        <RouterLink class="text-blue-500 hover:text-blue-800" to="/about"
+          >About</RouterLink
         >
       </li>
     </ul>

@@ -46,14 +46,14 @@ const nextAuthor =
           <div class="flex">
             <RouterLink
               v-if="previousAuthor"
-              :to="`/authors/${previousAuthor.slug}`"
+              :to="`/author/${previousAuthor.slug}`"
               class="flex-grow"
             >
               &#60; {{ previousAuthor.title }}
             </RouterLink>
             <RouterLink
               v-if="nextAuthor"
-              :to="`/authors/${nextAuthor.slug}`"
+              :to="`/author/${nextAuthor.slug}`"
               class="text-right flex-grow"
             >
               {{ nextAuthor.title }} &#62;
