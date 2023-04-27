@@ -30,6 +30,7 @@ if (post) {
             type: 'post'
           }"
           :src="`..${post.headerUrl}`"
+          class="bg-gray-50 w-full"
           style="aspect-ratio: 1280 / 720"
         />
         <div class="px-6 md:px-0">
