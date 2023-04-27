@@ -26,7 +26,7 @@ const nextAuthor =
               id: author.slug,
               type: 'author'
             }"
-            :src="author.img"
+            :src="`..${author.img}`"
             class="inline-block rounded-full w-96"
             style="aspect-ratio: 1 / 1"
           />

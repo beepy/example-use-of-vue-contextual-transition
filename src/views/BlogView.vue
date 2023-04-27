@@ -28,7 +28,7 @@ const posts = computed(() => {
               id: post.slug,
               type: 'post'
             }"
-            :src="post.thumbnailUrl"
+            :src="`.${post.thumbnailUrl}`"
             class="w-24"
             style="aspect-ratio: 1 / 1"
           />
@@ -60,7 +60,7 @@ const posts = computed(() => {
               only: 'leave',
               type: 'author'
             }"
-            :src="post.author.img"
+            :src="`.${post.author.img}`"
             class="w-12 rounded-full"
             style="aspect-ratio: 1 / 1"
           />

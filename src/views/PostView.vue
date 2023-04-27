@@ -29,7 +29,7 @@ if (post) {
             id: post.slug,
             type: 'post'
           }"
-          :src="post.headerUrl"
+          :src="`..${post.headerUrl}`"
           style="aspect-ratio: 1280 / 720"
         />
         <div class="px-6 md:px-0">
@@ -57,7 +57,7 @@ if (post) {
                 id: post.author.slug,
                 type: 'author'
               }"
-              :src="post.author.img"
+              :src="`..${post.author.img}`"
               class="w-12 rounded-full"
               style="aspect-ratio: 1 / 1"
             />
