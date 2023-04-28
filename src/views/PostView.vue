@@ -29,7 +29,7 @@ if (post) {
             id: post.slug,
             type: 'post'
           }"
-          :src="`${post.headerUrl}`"
+          :src="`.${post.headerUrl}`"
           class="bg-gray-50 w-full"
           style="aspect-ratio: 1280 / 720"
         />
@@ -58,7 +58,7 @@ if (post) {
                 id: post.author.slug,
                 type: 'author'
               }"
-              :src="`${post.author.img}`"
+              :src="`.${post.author.img}`"
               class="w-12 rounded-full"
               style="aspect-ratio: 1 / 1"
             />
