@@ -21,7 +21,7 @@ if (post) {
       value: postIndex
     }"
   >
-    <div class="max-w-xl mx-auto mt-6">
+    <div class="mt-6">
       <template v-if="post">
         <img
           v-shared-element="{
@@ -33,14 +33,14 @@ if (post) {
           class="bg-gray-50 w-full"
           style="aspect-ratio: 1280 / 720"
         />
-        <div class="px-6 md:px-0">
+        <div class="">
           <h2
             v-shared-element="{
               role: 'title',
               id: post.slug,
               type: 'post'
             }"
-            class="text-lg md:text-xl font-bold mt-6"
+            class=""
           >
             {{ post.title }}
           </h2>
@@ -72,7 +72,7 @@ if (post) {
               >{{ post.author.title }}</span
             >
           </RouterLink>
-          <div class="flex my-6">
+          <div class="flex">
             <RouterLink
               v-if="previousPost"
               :to="`/post/${previousPost.slug}`"

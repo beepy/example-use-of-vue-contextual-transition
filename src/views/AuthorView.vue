@@ -17,8 +17,8 @@ const nextAuthor =
       value: authorIndex
     }"
   >
-    <div class="max-w-2xl mx-auto mt-12">
-      <div v-if="author" class="md:flex gap-4 px-6 md:px-0">
+    <div class="mt-6">
+      <div v-if="author" class="">
         <div class="flex-grow text-center" style="flex-basis: 500px">
           <img
             v-shared-element="{
@@ -38,7 +38,7 @@ const nextAuthor =
               id: author.slug,
               type: 'author'
             }"
-            class="text-lg md:text-xl font-bold"
+            class="text-center"
           >
             {{ author.title }}
           </h2>

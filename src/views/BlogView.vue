@@ -15,13 +15,9 @@ const posts = computed(() => {
 
 <template>
   <div>
-    <ul class="max-w-xl mx-auto mt-6 px-4 md:px-0">
-      <li
-        v-for="post in posts"
-        :key="post.slug"
-        class="flex items-stretch mb-4 shadow-xl rounded border"
-      >
-        <RouterLink :to="`/post/${post.slug}`" class="flex-shrink">
+    <ul class="post-index">
+      <li v-for="post in posts" :key="post.slug" class="shadow-xl rounded">
+        <RouterLink :to="`/post/${post.slug}`" class="thumbnail">
           <img
             v-shared-element="{
               role: 'img',
@@ -29,14 +25,9 @@ const posts = computed(() => {
               type: 'post'
             }"
             :src="`.${post.thumbnailUrl}`"
-            class="w-24"
-            style="aspect-ratio: 1 / 1"
           />
         </RouterLink>
-        <RouterLink
-          :to="`/post/${post.slug}`"
-          class="text-lg md:text-xl font-bold flex-grow px-6 text-gray-600 leading-5 flex items-center"
-        >
+        <RouterLink :to="`/post/${post.slug}`" class="title">
           <h3
             v-shared-element="{
               role: 'title',
@@ -51,7 +42,7 @@ const posts = computed(() => {
         <RouterLink
           v-if="post.author"
           :to="`/author/${post.author.slug}`"
-          class="flex-col basis-40 items-center hidden md:flex justify-center"
+          class="author"
         >
           <!--
             why only: 'leave'? When entering, we don't know which instance of
@@ -66,8 +57,7 @@ const posts = computed(() => {
               type: 'author'
             }"
             :src="`.${post.author.img}`"
-            class="w-12 rounded-full"
-            style="aspect-ratio: 1 / 1"
+            class="thumbnail rounded-full"
           />
           <span
             v-shared-element="{
@@ -76,7 +66,7 @@ const posts = computed(() => {
               only: 'leave',
               type: 'author'
             }"
-            class="text-sm"
+            class="title"
             >{{ post.author.title }}</span
           >
         </RouterLink>
@@ -84,3 +74,42 @@ const posts = computed(() => {
     </ul>
   </div>
 </template>
+
+<style>
+.post-index {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.post-index > li {
+  flex: 0 1 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-index > li > .thumbnail img {
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+.post-index > li > .title h3 {
+  margin: 0;
+  text-align: center;
+  padding: 0 1rem;
+  line-height: 1.2;
+}
+
+.post-index > li > .author {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.post-index > li > .author img {
+  max-width: 40px;
+}
+</style>
