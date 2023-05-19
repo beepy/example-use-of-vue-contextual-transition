@@ -1,5 +1,11 @@
 ## Example Use of Vue Contextual Transition Changelog
 
+## [0.1.1] - 2023-05-19 10:28AM
+
+### Changed
+
+* Flattened blog vue (to better experiment with effect of x margin)
+
 ## [0.1.1] - 2023-05-12 10:24AM
 
 ### Changed

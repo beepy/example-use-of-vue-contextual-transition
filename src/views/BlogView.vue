@@ -14,75 +14,74 @@ const posts = computed(() => {
 </script>
 
 <template>
-  <div>
-    <ul class="post-index">
-      <li v-for="post in posts" :key="post.slug" class="shadow-xl rounded">
-        <RouterLink :to="`/post/${post.slug}`" class="thumbnail">
-          <img
-            v-shared-element="{
-              role: 'img',
-              id: post.slug,
-              type: 'post'
-            }"
-            :src="`.${post.thumbnailUrl}`"
-          />
-        </RouterLink>
-        <RouterLink :to="`/post/${post.slug}`" class="title">
-          <h3
-            v-shared-element="{
-              role: 'title',
-              id: post.slug,
-              type: 'post'
-            }"
-          >
-            {{ post.title }}
-          </h3>
-        </RouterLink>
-
-        <RouterLink
-          v-if="post.author"
-          :to="`/author/${post.author.slug}`"
-          class="author"
+  <ul class="post-index">
+    <li v-for="post in posts" :key="post.slug" class="shadow-xl rounded">
+      <RouterLink :to="`/post/${post.slug}`" class="thumbnail">
+        <img
+          v-shared-element="{
+            role: 'img',
+            id: post.slug,
+            type: 'post'
+          }"
+          :src="`.${post.thumbnailUrl}`"
+        />
+      </RouterLink>
+      <RouterLink :to="`/post/${post.slug}`" class="title">
+        <h3
+          v-shared-element="{
+            role: 'title',
+            id: post.slug,
+            type: 'post'
+          }"
         >
-          <!--
-            why only: 'leave'? When entering, we don't know which instance of
-            the author we should transition to
-          -->
+          {{ post.title }}
+        </h3>
+      </RouterLink>
 
-          <img
-            v-shared-element="{
-              role: 'img',
-              id: post.author.slug,
-              only: 'leave',
-              type: 'author'
-            }"
-            :src="`.${post.author.img}`"
-            class="thumbnail rounded-full"
-          />
-          <span
-            v-shared-element="{
-              role: 'title',
-              id: post.author.slug,
-              only: 'leave',
-              type: 'author'
-            }"
-            class="title"
-            >{{ post.author.title }}</span
-          >
-        </RouterLink>
-      </li>
-    </ul>
-  </div>
+      <RouterLink
+        v-if="post.author"
+        :to="`/author/${post.author.slug}`"
+        class="author"
+      >
+        <!--
+          why only: 'leave'? When entering, we don't know which instance of
+          the author we should transition to
+        -->
+
+        <img
+          v-shared-element="{
+            role: 'img',
+            id: post.author.slug,
+            only: 'leave',
+            type: 'author'
+          }"
+          :src="`.${post.author.img}`"
+          class="thumbnail rounded-full"
+        />
+        <span
+          v-shared-element="{
+            role: 'title',
+            id: post.author.slug,
+            only: 'leave',
+            type: 'author'
+          }"
+          class="title"
+          >{{ post.author.title }}</span
+        >
+      </RouterLink>
+    </li>
+  </ul>
 </template>
 
 <style>
 .post-index {
-  padding: 0;
+  padding: 2rem 0 0;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  margin: 0;
 }
 
 .post-index > li {
