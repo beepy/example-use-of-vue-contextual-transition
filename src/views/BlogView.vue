@@ -76,12 +76,14 @@ const posts = computed(() => {
 <style>
 .post-index {
   padding: 2rem 0 0;
+  margin: 0;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  margin: 0;
+  /* necessary for transition sizing */
+  box-sizing: border-box;
 }
 
 .post-index > li {
